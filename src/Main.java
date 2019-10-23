@@ -2,23 +2,26 @@ import java.util.Scanner;
 
 //
 //
+//
+
 public class Main{
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        float v1 = scn.nextFloat();
-        float maxval = v1;
-        float minval = v1;
-        for (int i = 1 ; i < 10 ; i ++);
-        v1 = scn.nextFloat();
-        if (maxval < v1){
-            maxval = v1;
+        int n = scn.nextInt();
+        int m = n / 2;
+        boolean flag = true;
+        for (int i = 2 ; i <= m ; i ++){
+            if (n % i == 0){
+                flag = false;
+                break;
+            }
         }
-        else if (minval > v1){
-            minval = v1;
-            System.out.printf("%.2f",maxval);
-            System.out.printf("%.2f",minval);
+        if (flag){
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
         }
     }
-
 }
+
 
